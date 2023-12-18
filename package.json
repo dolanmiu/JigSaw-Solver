@@ -1,0 +1,23 @@
+{
+  "name": "jigsaw-solver",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build-opencv-windows": "cross-env OPENCV_LIB_DIR=C:\\tools\\opencv\\build\\x64\\vc16\\lib npx build-opencv --incDir C:\\tools\\opencv\\build\\include --libDir C:\\tools\\opencv\\build\\x64\\vc16\\lib --binDir C:\\tools\\opencv\\build\\x64\\vc16\\bin --nobuild rebuild",
+    "dev": "npm run build && node ./dist/main.mjs",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "prettier": "^3.1.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-externalize-deps": "^0.8.0"
+  },
+  "opencv4nodejs": {
+  },
+  "dependencies": {
+    "@u4/opencv4nodejs": "^6.5.2"
+  }
+}
