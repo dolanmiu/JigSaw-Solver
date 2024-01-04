@@ -9,8 +9,8 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/main.ts"),
       name: "jigsaw-solver",
-      fileName: () => `main.mjs`,
-      formats: ["es"],
+      fileName: () => `main.cjs`,
+      formats: ["cjs"],
     },
     outDir: resolve(__dirname, "dist"),
   },

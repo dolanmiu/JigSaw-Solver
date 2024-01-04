@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build-opencv-windows": "cross-env OPENCV_LIB_DIR=C:\\tools\\opencv\\build\\x64\\vc16\\lib npx build-opencv --incDir C:\\tools\\opencv\\build\\include --libDir C:\\tools\\opencv\\build\\x64\\vc16\\lib --binDir C:\\tools\\opencv\\build\\x64\\vc16\\bin --nobuild rebuild",
-    "dev": "npm run build && node ./dist/main.mjs",
+    "dev": "npm run build && node ./dist/main.cjs",
     "build": "tsc && vite build"
   },
   "devDependencies": {

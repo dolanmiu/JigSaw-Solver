@@ -1,4 +1,5 @@
 import cv, { Mat } from "@u4/opencv4nodejs";
+import { splitPuzzleContourToFour } from "./puzzle-contour";
 
 const mat = cv.imread("./samples/Scan.tiff");
 
@@ -49,11 +50,11 @@ const contours = mask
   .map((c) => c.getPoints());
 
 export const corners = findCorners(mask);
-console.log(contours)
+const contourParts = contours.map((c) => splitPuzzleContourToFour(c)).map((c) => c[0]);
 
 const result = mat.copy();
 // // Draw all contours
-result.drawContours(contours, -1, new cv.Vec3(255, 0, 0), { thickness: -1 });
+result.drawContours(contourParts, -1, new cv.Vec3(255, 0, 0), { thickness: -1 });
 
 // const test = new cv.Mat(result.getDataAsArray(), cv.CV_8UC3) // new cv.Mat(result.sizes[0], result.sizes[1], cv.CV_8UC3, 1);
 cv.imshow("a window name", result);
